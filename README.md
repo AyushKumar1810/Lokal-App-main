@@ -1,34 +1,17 @@
-# Lokal-App
+# Lokal App
 
-## 🚀 Introduction
-Lokal-App is a **React Native** application built using **Expo** for seamless cross-platform deployment. This project follows best practices to ensure scalability, maintainability, and performance.
+Lokal App is a React Native application built using Expo and Expo Router for seamless navigation. This project provides a smooth mobile experience with easy deployment via Expo.
 
-## 📌 Features
-- 🔹 **Cross-Platform Support** (iOS & Android)
-- 🔹 **Real-time Updates** with Expo EAS
-- 🔹 **Optimized Performance** with latest React Native features
-- 🔹 **Responsive UI** for all devices
-- 🔹 **Fast and Secure** with latest security updates
+## 📌 Project Demo
+Watch the live demo of the project here: [Project Demo on Loom](https://www.loom.com/share/bf54f8831880489f8815fa2d7acac810?sid=dc33ff9d-e49a-4a57-9de0-f0f57eed001e)
 
-## 📁 Project Structure
-```
-Lokal-App/
-├── assets/                # Static assets (icons, images, etc.)
-├── components/            # Reusable UI components
-├── screens/               # Application screens
-├── navigation/            # Navigation setup
-├── utils/                 # Helper functions
-├── App.js                 # Main entry file
-├── package.json           # Dependencies and scripts
-├── eas.json               # EAS build configuration
-├── README.md              # Project documentation
-```
+---
 
-## ⚡ Getting Started
+## 🚀 Getting Started
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/yourusername/Lokal-App.git
+git clone https://github.com/your-username/Lokal-App.git
 cd Lokal-App
 ```
 
@@ -37,72 +20,77 @@ cd Lokal-App
 npm install
 ```
 
-### 3️⃣ Login to Expo
+### 3️⃣ Setup Expo CLI (If Not Installed)
 ```sh
-expo login
+npm install -g expo-cli
 ```
 
-### 4️⃣ Run the App Locally
+### 4️⃣ Start the Development Server
 ```sh
-expo start
+npx expo start
 ```
-This will launch Metro Bundler. You can open the app on your mobile using **Expo Go**.
+This will launch Metro Bundler. You can run the app using an emulator or a physical device with the Expo Go app.
 
 ---
 
-## 🚀 Deployment with EAS
+## 🔗 Deployment to Expo
 
-### 1️⃣ Initialize EAS
+### 1️⃣ Login to Expo
 ```sh
-eas init
+eas login
+```
+Ensure you are logged in with the correct Expo account.
+
+### 2️⃣ Configure Expo Application
+```sh
+eas update:configure
+```
+If you face any permission issues, check your account:
+```sh
+eas whoami
 ```
 
-### 2️⃣ Build the App
-For Android:
+### 3️⃣ Publish the App
 ```sh
-eas build --platform android
-```
-For iOS:
-```sh
-eas build --platform ios
-```
-
-### 3️⃣ Publish the Update
-```sh
-eas update --branch main --message "Initial Release"
+eas update --branch main --message "Initial release"
 ```
 
 ---
 
-## 🛠 Troubleshooting
-| Issue | Solution |
-|--------|----------|
-| **GraphQL request failed** | Ensure you are logged in (`expo login`) |
-| **Entity not authorized** | Check account permissions & try `expo whoami` |
-| **expo build not working** | Use `eas build --platform android` instead |
+## ❌ Common Errors & Fixes
 
----
+1. **fbjs/lib/invariant could not be found**
+   - Run: `npm install fbjs`
+   - If the issue persists, delete `node_modules` and reinstall:
+     ```sh
+     rm -rf node_modules package-lock.json
+     npm install
+     ```
 
-## 📜 License
-This project is licensed under the **MIT License**. Feel free to use and modify!
+2. **EAS permissions issue**
+   - Ensure you're logged into the correct account:
+     ```sh
+eas whoami
+     ```
+   - If needed, log in again:
+     ```sh
+eas login
+     ```
+
+3. **Expo Build Issues**
+   - Use `eas build` instead of `expo build`, as Expo CLI has changed.
 
 ---
 
 ## 🤝 Contributing
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature-name`)
-3. Commit changes (`git commit -m "Added new feature"`)
-4. Push to GitHub (`git push origin feature-name`)
-5. Create a pull request
+
+1. Fork the repository.
+2. Create a new branch (`feature-branch`).
+3. Commit your changes.
+4. Push to the branch and submit a PR.
 
 ---
 
-## ✨ Acknowledgments
-Thanks to the **React Native** and **Expo** communities for their amazing support and resources!
-
-📬 **Have questions?** Feel free to reach out!
-
----
-
-🚀 **Happy Coding!** 🎉
+## 📜 License
+This project is licensed under the MIT License.
 
